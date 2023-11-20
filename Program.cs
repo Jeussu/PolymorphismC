@@ -17,6 +17,8 @@
                 new BMW(250, "red", "M4")
             };
 
+            // Polymorphism at work #2: the virtual method Repair is
+            // invoked on each of the derived classes, not the base class.
             foreach (var car in cars)
             {
                 car.Repair();
@@ -28,13 +30,24 @@
             bmwZ3.ShowDetails();
             audiA3.ShowDetails();
 
+            bmwZ3.SetCarIDInfo(1234, "Denis panjuta");
+            audiA3.SetCarIDInfo(1235, "Frank White");
+            bmwZ3.GetCarIDInfo();
+            audiA3.GetCarIDInfo();
+
             BMW bmwM5 = new BMW(330, "While", "M5");
             bmwM5.ShowDetails();
 
             Car carB = (Car)bmwM5;
             carB.ShowDetails();
 
+            M3 myM3 = new M3(260, "red", "M3 Super Turbo");
+            myM3.Repair();
+
             Console.ReadKey();
         }
     }
 }
+
+
+
